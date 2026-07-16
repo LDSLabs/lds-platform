@@ -9,7 +9,7 @@ export const waitlist = {
   fields: {
     name: { label: 'Name', placeholder: 'Your name' },
     email: { label: 'Email', placeholder: 'you@company.com' },
-    beta: { label: "I'd like to take part in the beta program" },
+    betaInterest: { label: "I'd like to take part in the beta program" },
   },
   submitLabel: 'Request early access',
   submittingLabel: 'Sending…',
@@ -17,11 +17,17 @@ export const waitlist = {
   // form endpoint.
   successMessage: "Thanks! Your request was received — we'll be in touch soon.",
   // Shown when no form endpoint is configured yet. Deliberately avoids any
-  // claim that data was received, sent, or saved.
+  // claim that data was received, sent, or saved, and makes clear
+  // registration isn't available yet.
   localNoticeMessage:
-    "Thanks for the interest! This form isn't connected to a live service yet, so nothing was sent. Early access registration will open soon.",
-  // Shown when a configured form endpoint responds with an error or the
-  // request fails (e.g. network issue).
+    "Early access registration isn't available yet. This form isn't connected to a live service, so nothing was submitted — please check back soon.",
+  // Shown when a configured form endpoint rejects the submission for a
+  // validation-like reason (e.g. bad input). Friendly and non-technical.
+  validationErrorMessage:
+    "We couldn't submit your request. Please check your name and email and try again.",
+  // Shown when a configured form endpoint responds with a server error or
+  // the request fails outright (e.g. network issue). Friendly and
+  // non-technical — no raw error details are ever shown to visitors.
   errorMessage:
     'Something went wrong sending your request. Please try again in a moment.',
   privacyNote: 'No spam. Only product updates and early access invitations.',

@@ -4,8 +4,14 @@ import { waitlist } from '../../content/waitlist.js';
 import { siteConfig } from '../../config/siteConfig.js';
 import styles from './WaitlistForm.module.css';
 
-const initialValues = { name: '', email: '', beta: false };
+const initialValues = { name: '', email: '', betaInterest: false };
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+// Formspree submission metadata. `_subject` sets the notification email
+// subject line; `_source` is a free-form label to identify this form if
+// multiple forms ever point at the same Formspree project.
+const FORM_SOURCE = 'landing-page';
+const FORM_SUBJECT = 'New LDS Labs early access signup';
 
 function WaitlistForm() {
   const [values, setValues] = useState(initialValues);
@@ -26,7 +32,7 @@ function WaitlistForm() {
   const isConfigured = Boolean(siteConfig.formEndpoint);
 
   const handleChange = (field) => (event) => {
-    const value = field === 'beta' ? event.target.checked : event.target.value;
+    const value = field === 'betaInterest' ? event.target.checked : event.target.value;
     setValues((prev) => ({ ...prev, [field]: value }));
   };
 
@@ -40,6 +46,13 @@ function WaitlistForm() {
     }
     return nextErrors;
   };
+
+  // Formspree returns errors in the shape:
+  //   { errors: [{ field: 'email', message: '...', code: '...' }, ...] }
+  // We use this only to decide between a "check your input" message and a
+  // generic failure message — the raw Formspree message text is never
+  // surfaced to the visitor.
+  const isValidationLikeStatus = (httpStatus) => httpStatus === 400 || httpStatus === 422;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -55,17 +68,16 @@ function WaitlistForm() {
       return;
     }
 
-    submissionInFlightRef.current = true;
-    setStatus('submitting');
-
     if (!isConfigured) {
-      // No form service configured yet (siteConfig.formEndpoint is null).
-      // Validation above still runs, but we deliberately stop short of a
-      // fake "success" — nothing is sent or saved anywhere.
+      // No form service configured (siteConfig.formEndpoint is empty).
+      // Validation above still runs, but no request is ever sent and we
+      // never claim the submission succeeded.
       setStatus('local');
-      submissionInFlightRef.current = false;
       return;
     }
+
+    submissionInFlightRef.current = true;
+    setStatus('submitting');
 
     try {
       const response = await fetch(siteConfig.formEndpoint, {
@@ -77,17 +89,23 @@ function WaitlistForm() {
         body: JSON.stringify({
           name: values.name,
           email: values.email,
-          beta: values.beta,
+          betaInterest: values.betaInterest,
+          _source: FORM_SOURCE,
+          _subject: FORM_SUBJECT,
         }),
       });
 
       if (!response.ok) {
-        throw new Error(`Form endpoint responded with status ${response.status}`);
+        setStatus(isValidationLikeStatus(response.status) ? 'validation-error' : 'error');
+        return;
       }
 
       setStatus('success');
       setValues(initialValues);
     } catch (error) {
+      // Network failure or unexpected error — details are logged only for
+      // local debugging, never shown to the visitor, and input is kept so
+      // they don't have to retype anything.
       console.error('Waitlist submission failed:', error);
       setStatus('error');
     } finally {
@@ -104,7 +122,7 @@ function WaitlistForm() {
           <h2 id="waitlist-title" className={styles.title}>
             {waitlist.title}
           </h2>
-          <p role="status" className={styles.successMessage}>
+          <p role="status" aria-live="polite" className={styles.successMessage}>
             {status === 'success' ? waitlist.successMessage : waitlist.localNoticeMessage}
           </p>
           <p className={styles.privacyNote}>{waitlist.privacyNote}</p>
@@ -122,9 +140,9 @@ function WaitlistForm() {
         <p className={styles.description}>{waitlist.description}</p>
 
         <form className={styles.form} onSubmit={handleSubmit} noValidate>
-          {status === 'error' && (
+          {(status === 'error' || status === 'validation-error') && (
             <p className={styles.formError} role="alert">
-              {waitlist.errorMessage}
+              {status === 'validation-error' ? waitlist.validationErrorMessage : waitlist.errorMessage}
             </p>
           )}
 
@@ -179,15 +197,15 @@ function WaitlistForm() {
           <div className={styles.checkboxField}>
             <input
               id={betaId}
-              name="beta"
+              name="betaInterest"
               type="checkbox"
               className={styles.checkbox}
-              checked={values.beta}
-              onChange={handleChange('beta')}
+              checked={values.betaInterest}
+              onChange={handleChange('betaInterest')}
               disabled={isSubmitting}
             />
             <label htmlFor={betaId} className={styles.checkboxLabel}>
-              {waitlist.fields.beta.label}
+              {waitlist.fields.betaInterest.label}
             </label>
           </div>
 
@@ -207,4 +225,5 @@ function WaitlistForm() {
 }
 
 export default WaitlistForm;
+
 
