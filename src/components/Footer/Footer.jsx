@@ -9,7 +9,7 @@ function Footer() {
     <footer className={styles.footer}>
       <div className={`container ${styles.inner}`}>
         <div>
-          <p className={styles.domain}>{site.domain}</p>
+          <p className={styles.domain}>{site.displayDomain}</p>
           <p className={styles.tagline}>{site.tagline}</p>
         </div>
 

@@ -14,27 +14,23 @@ export const siteConfig = {
     'LDS Labs creates developer products, starters, modules and tools designed to help software teams ship faster.',
 
   // Primary domain the site will be published on.
-  domain: 'ldshome.com.br',
+  domain: 'https://ldshome.com.br',
 
-  // TODO(before launch): set to the real GitHub organization or repository
-  // URL, e.g. 'https://github.com/lds-labs'. Leave `null` to hide the
-  // footer's GitHub link instead of rendering a placeholder.
-  githubUrl: null,
+  // Real GitHub organization/repository URL.
+  githubUrl: 'https://github.com/LDSLabs',
 
-  // TODO(before launch): set to the real contact mailbox, e.g.
-  // 'hello@ldshome.com.br'. Leave `null` to hide the footer's contact link.
-  contactEmail: null,
+  // Real contact mailbox.
+  contactEmail: 'hello@ldshome.com.br',
 
-  // TODO(before launch): set to the Formspree endpoint for the waitlist
-  // form, e.g. 'https://formspree.io/f/xxxxxxxx'. While this is `null`,
+  // Formspree endpoint for the waitlist form. While this is falsy,
   // WaitlistForm runs in local-only mode: it still validates input but
   // never submits anywhere and never claims data was saved.
-  formEndpoint: null,
+  formEndpoint: 'https://formspree.io/f/xbdngdlq',
 
   // TODO(later): set to the analytics provider's site/property id once
   // analytics is approved and added. Not wired up to anything yet — no
   // analytics script is loaded in this version.
-  analyticsId: null,
+  analyticsId: '',
 
   // TODO(later): set once a real privacy policy page exists. Leave `null`
   // to keep the footer's "Privacy" item non-clickable.
