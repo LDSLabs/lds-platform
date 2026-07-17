@@ -27,11 +27,11 @@
   cursor: pointer;
 }
 
-.button:hover:not(:disabled) {
+.button:hover:not([aria-current='true']) {
   color: var(--color-text);
 }
 
-.button:disabled {
+.button[aria-current='true'] {
   color: var(--color-accent-strong);
   cursor: default;
 }

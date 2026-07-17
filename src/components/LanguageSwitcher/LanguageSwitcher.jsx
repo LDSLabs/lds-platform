@@ -37,8 +37,12 @@ function LanguageSwitcher() {
               className={styles.button}
               aria-current={isActive ? 'true' : undefined}
               aria-label={t(LANGUAGE_LABEL_KEYS[language])}
-              disabled={isActive}
-              onClick={() => i18n.changeLanguage(language)}
+              onClick={() => {
+                // Avoid redundant calls/side effects when the already
+                // active language is clicked again.
+                if (isActive) return;
+                i18n.changeLanguage(language);
+              }}
             >
               {LANGUAGE_CODES[language]}
             </button>

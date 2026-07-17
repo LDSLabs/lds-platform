@@ -43,8 +43,6 @@
     "includedTitle": "O que já está pronto",
     "plannedTitle": "O que está planejado",
     "status": {
-      "completed": "Concluído",
-      "inProgress": "Em andamento",
       "planned": "Planejado"
     },
     "included": [

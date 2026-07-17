@@ -43,8 +43,6 @@
     "includedTitle": "What's already built",
     "plannedTitle": "What's planned next",
     "status": {
-      "completed": "Completed",
-      "inProgress": "In progress",
       "planned": "Planned"
     },
     "included": [

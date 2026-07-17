@@ -28,7 +28,6 @@ function WaitlistForm() {
   const betaId = useId();
   const nameErrorId = useId();
   const emailErrorId = useId();
-  const statusId = useId();
 
   const isConfigured = Boolean(siteConfig.formEndpoint);
 
@@ -219,13 +218,15 @@ function WaitlistForm() {
             </label>
           </div>
 
-          <Button type="submit" variant="primary" className={styles.submit} disabled={isSubmitting}>
+          <Button
+            type="submit"
+            variant="primary"
+            className={styles.submit}
+            disabled={isSubmitting}
+            aria-live="polite"
+          >
             {isSubmitting ? t('waitlist.submittingLabel') : t('waitlist.submitLabel')}
           </Button>
-
-          <p id={statusId} className="visually-hidden" aria-live="polite">
-            {isSubmitting ? t('waitlist.submittingLabel') : ''}
-          </p>
 
           <p className={styles.privacyNote}>{t('waitlist.privacyNote')}</p>
         </form>

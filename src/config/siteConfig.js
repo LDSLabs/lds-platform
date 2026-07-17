@@ -30,7 +30,7 @@ export const siteConfig = {
   // TODO(later): set to the analytics provider's site/property id once
   // analytics is approved and added. Not wired up to anything yet — no
   // analytics script is loaded in this version.
-  analyticsId: '',
+  analyticsId: null,
 
   // TODO(later): set once a real privacy policy page exists. Leave `null`
   // to keep the footer's "Privacy" item non-clickable.
