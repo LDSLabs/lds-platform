@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import Button from '../Button/Button.jsx';
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher.jsx';
 import { site, navLinks, headerCta } from '../../content/site.js';
+import { resolveHref } from '../../utils/routing.js';
 import styles from './Header.module.css';
 
 function Header() {
@@ -14,7 +15,7 @@ function Header() {
   return (
     <header className={styles.header}>
       <div className={`container ${styles.inner}`}>
-        <a href="#top" className={styles.brand}>
+        <a href={resolveHref('#top')} className={styles.brand}>
           {site.brandName}
         </a>
 
@@ -39,7 +40,7 @@ function Header() {
           <ul className={styles.navList}>
             {navLinks.map((link) => (
               <li key={link.href}>
-                <a href={link.href} className={styles.navLink} onClick={closeMenu}>
+                <a href={resolveHref(link.href)} className={styles.navLink} onClick={closeMenu}>
                   {t(`nav.${link.key}`)}
                 </a>
               </li>
@@ -47,7 +48,7 @@ function Header() {
           </ul>
           <div className={styles.navActions}>
             <LanguageSwitcher />
-            <Button href={headerCta.href} variant="primary" className={styles.cta} onClick={closeMenu}>
+            <Button href={resolveHref(headerCta.href)} variant="primary" className={styles.cta} onClick={closeMenu}>
               {t('nav.cta')}
             </Button>
           </div>

@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { site } from '../../content/site.js';
 import { getFooterLinks } from '../../content/footer.js';
+import { resolveHref } from '../../utils/routing.js';
 import styles from './Footer.module.css';
 
 function Footer() {
@@ -20,7 +21,7 @@ function Footer() {
           {links.map((link) => (
             <li key={link.key}>
               {link.href ? (
-                <a href={link.href} className={styles.link}>
+                <a href={resolveHref(link.href)} className={styles.link}>
                   {t(`footer.${link.key}`)}
                 </a>
               ) : (

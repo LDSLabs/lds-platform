@@ -6,9 +6,12 @@ import Benefits from './components/Benefits/Benefits.jsx'
 import Roadmap from './components/Roadmap/Roadmap.jsx'
 import WaitlistForm from './components/WaitlistForm/WaitlistForm.jsx'
 import Footer from './components/Footer/Footer.jsx'
+import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy.jsx'
+import { isPrivacyRoute } from './utils/routing.js'
 
 function App() {
   const { t } = useTranslation()
+  const showPrivacyPolicy = isPrivacyRoute()
 
   return (
     <>
@@ -17,11 +20,17 @@ function App() {
       </a>
       <Header />
       <main id="main-content">
-        <Hero />
-        <Product />
-        <Benefits />
-        <Roadmap />
-        <WaitlistForm />
+        {showPrivacyPolicy ? (
+          <PrivacyPolicy />
+        ) : (
+          <>
+            <Hero />
+            <Product />
+            <Benefits />
+            <Roadmap />
+            <WaitlistForm />
+          </>
+        )}
       </main>
       <Footer />
     </>

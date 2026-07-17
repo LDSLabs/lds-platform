@@ -32,9 +32,8 @@ export const siteConfig = {
   // analytics script is loaded in this version.
   analyticsId: null,
 
-  // TODO(later): set once a real privacy policy page exists. Leave `null`
-  // to keep the footer's "Privacy" item non-clickable.
-  privacyUrl: null,
+  // Path to the in-app Privacy Policy page (see src/pages/PrivacyPolicy).
+  privacyUrl: '/privacy',
 
   // TODO(later): set once a real terms of service page exists. Leave
   // `null` to keep the footer's "Terms" item non-clickable.

@@ -131,6 +131,120 @@
     "terms": "Termos",
     "copyright": "© {{year}} {{brand}}. Todos os direitos reservados."
   },
+  "privacy": {
+    "metaTitle": "Política de Privacidade — {{brand}}",
+    "metaDescription": "Como a {{brand}} coleta, usa e protege os dados enviados por meio deste site.",
+    "title": "Política de Privacidade",
+    "effectiveDateLabel": "Data de vigência",
+    "effectiveDate": "16 de julho de 2026",
+    "intro": "Esta Política de Privacidade explica quais informações a {{brand}} coleta por meio deste site, por que as coletamos e como você pode exercer seus direitos sobre elas. Ela reflete apenas nossas práticas atuais e não constitui aconselhamento jurídico nem garantia de conformidade com qualquer lei específica.",
+    "backToHome": "Voltar para o início",
+    "sections": {
+      "whoWeAre": {
+        "title": "Quem somos",
+        "body": "A {{brand}} é um projeto independente que desenvolve produtos e ferramentas para desenvolvedores, atualmente em fase de acesso antecipado."
+      },
+      "dataCollected": {
+        "title": "Dados que coletamos",
+        "intro": "Ao usar o formulário de acesso antecipado ou interagir de outra forma com este site, podemos coletar:",
+        "items": [
+          "Seu nome",
+          "Seu endereço de e-mail",
+          "Uma indicação opcional de interesse em participar do nosso programa beta",
+          "Dados técnicos básicos que podem ser processados automaticamente pela nossa infraestrutura de hospedagem ou pelo Formspree, como endereço IP, data/hora e informações da requisição, quando aplicável",
+          "Sua preferência de idioma, armazenada apenas no seu navegador via localStorage"
+        ]
+      },
+      "howCollected": {
+        "title": "Como coletamos",
+        "items": [
+          "Por meio do formulário de lista de espera de acesso antecipado",
+          "Por meio da sua interação direta com o site",
+          "Por meio do processamento técnico necessário para entregar o site ao seu navegador"
+        ]
+      },
+      "purposes": {
+        "title": "Por que coletamos",
+        "items": [
+          "Para administrar a lista de espera de acesso antecipado",
+          "Para enviar atualizações do produto",
+          "Para enviar convites de acesso antecipado ou beta",
+          "Para responder a contatos",
+          "Para ajudar a prevenir abusos ou problemas de segurança"
+        ],
+        "note": "Não utilizamos seus dados para publicidade comportamental e não os vendemos a terceiros."
+      },
+      "legalBasis": {
+        "title": "Base legal",
+        "intro": "Dependendo da sua jurisdição, nos baseamos em:",
+        "items": [
+          "Seu consentimento, para comunicações e para a lista de espera",
+          "Procedimentos preliminares solicitados por você, quando aplicável",
+          "Nosso legítimo interesse, estritamente limitado ao necessário para a segurança e o funcionamento do site, quando aplicável"
+        ]
+      },
+      "sharing": {
+        "title": "Compartilhamento e operadores",
+        "intro": "Trabalhamos com um pequeno número de fornecedores que processam dados em nosso nome:",
+        "items": [
+          "Formspree — processa e armazena os envios do formulário de lista de espera",
+          "Vercel — hospeda e entrega este site",
+          "Hostinger — fornece serviços de e-mail e DNS, quando aplicável"
+        ],
+        "note": "Esses fornecedores podem processar dados técnicos de acordo com seus próprios termos e políticas de privacidade. Não vendemos seus dados a ninguém."
+      },
+      "internationalTransfers": {
+        "title": "Transferências internacionais",
+        "body": "Formspree, Vercel e outros fornecedores de infraestrutura que utilizamos podem processar dados em países diferentes do seu. Não afirmamos um país específico de processamento sem confirmação prévia, e buscamos trabalhar com fornecedores que mantenham medidas razoáveis de proteção de dados."
+      },
+      "retention": {
+        "title": "Por quanto tempo mantemos seus dados",
+        "body": "Mantemos seus dados apenas pelo tempo necessário para administrar a lista de espera, enviar comunicações, conduzir o programa beta, cumprir obrigações legais ou resolver disputas. Você pode solicitar a exclusão a qualquer momento. Ainda não definimos um prazo fixo de retenção."
+      },
+      "rights": {
+        "title": "Seus direitos",
+        "intro": "Dependendo da legislação aplicável, você pode ter o direito de:",
+        "items": [
+          "Confirmar se tratamos seus dados",
+          "Acessar seus dados",
+          "Corrigir dados incorretos",
+          "Solicitar a exclusão dos seus dados",
+          "Ser informado sobre com quem compartilhamos seus dados",
+          "Revogar seu consentimento a qualquer momento",
+          "Se opor ou solicitar a restrição de determinados tratamentos, quando aplicável",
+          "Solicitar a portabilidade dos dados, quando aplicável"
+        ]
+      },
+      "exerciseRights": {
+        "title": "Como exercer seus direitos",
+        "body": "Envie um e-mail para {{email}} com o assunto \"Solicitação de Privacidade\". Podemos solicitar informações razoáveis para confirmar sua identidade e proteger seus dados antes de atender à sua solicitação."
+      },
+      "security": {
+        "title": "Segurança",
+        "body": "Adotamos medidas técnicas e organizacionais razoáveis para proteger seus dados. Nenhum método de transmissão ou armazenamento é totalmente seguro, por isso não podemos garantir segurança absoluta."
+      },
+      "children": {
+        "title": "Crianças e adolescentes",
+        "body": "Este site não é direcionado intencionalmente a crianças, e não coletamos conscientemente dados de crianças. Se você acredita que uma criança nos forneceu dados pessoais, entre em contato conosco para que possamos resolver a situação."
+      },
+      "cookies": {
+        "title": "Cookies e armazenamento local",
+        "body": "Atualmente não utilizamos cookies de publicidade ou de analytics. Sua preferência de idioma pode ser armazenada no seu navegador por meio de localStorage. Alguns fornecedores técnicos podem usar tecnologias estritamente necessárias ao funcionamento do serviço."
+      },
+      "communications": {
+        "title": "Comunicações",
+        "body": "Você pode parar de receber mensagens nossas a qualquer momento enviando um e-mail e solicitando a remoção. Se futuramente introduzirmos uma newsletter, pretendemos incluir um link de cancelamento diretamente nessas mensagens."
+      },
+      "changes": {
+        "title": "Alterações nesta política",
+        "body": "Podemos atualizar esta política de tempos em tempos. Mudanças relevantes serão indicadas pela atualização da data de vigência no topo desta página."
+      },
+      "contact": {
+        "title": "Contato",
+        "body": "Se você tiver dúvidas sobre esta política ou sobre como tratamos seus dados, fale conosco:"
+      }
+    }
+  },
   "languageSwitcher": {
     "label": "Idioma",
     "en": "English",
