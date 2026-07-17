@@ -35,4 +35,8 @@ export const siteConfig = {
   // TODO(later): set once a real privacy policy page exists. Leave `null`
   // to keep the footer's "Privacy" item non-clickable.
   privacyUrl: null,
+
+  // TODO(later): set once a real terms of service page exists. Leave
+  // `null` to keep the footer's "Terms" item non-clickable.
+  termsUrl: null,
 };

@@ -1,6 +1,6 @@
 import { useId, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import Button from '../Button/Button.jsx';
-import { waitlist } from '../../content/waitlist.js';
 import { siteConfig } from '../../config/siteConfig.js';
 import styles from './WaitlistForm.module.css';
 
@@ -14,9 +14,10 @@ const FORM_SOURCE = 'landing-page';
 const FORM_SUBJECT = 'New LDS Labs early access signup';
 
 function WaitlistForm() {
+  const { t } = useTranslation();
   const [values, setValues] = useState(initialValues);
   const [errors, setErrors] = useState({});
-  const [status, setStatus] = useState('idle'); // idle | submitting | success | local | error
+  const [status, setStatus] = useState('idle'); // idle | submitting | success | local | error | validation-error
 
   // Guards against duplicate submissions (e.g. double-click, double Enter)
   // independently of the async state update timing.
@@ -39,10 +40,10 @@ function WaitlistForm() {
   const validate = () => {
     const nextErrors = {};
     if (!values.name.trim()) {
-      nextErrors.name = waitlist.errors.name;
+      nextErrors.name = t('waitlist.errors.name');
     }
     if (!EMAIL_PATTERN.test(values.email.trim())) {
-      nextErrors.email = waitlist.errors.email;
+      nextErrors.email = t('waitlist.errors.email');
     }
     return nextErrors;
   };
@@ -120,12 +121,19 @@ function WaitlistForm() {
       <section id="waitlist" className={styles.section} aria-labelledby="waitlist-title">
         <div className="container">
           <h2 id="waitlist-title" className={styles.title}>
-            {waitlist.title}
+            {t('waitlist.title')}
           </h2>
-          <p role="status" aria-live="polite" className={styles.successMessage}>
-            {status === 'success' ? waitlist.successMessage : waitlist.localNoticeMessage}
-          </p>
-          <p className={styles.privacyNote}>{waitlist.privacyNote}</p>
+          <div role="status" aria-live="polite" className={styles.successMessage}>
+            {status === 'success' ? (
+              <>
+                <p className={styles.successTitle}>{t('waitlist.successTitle')}</p>
+                <p>{t('waitlist.successMessage')}</p>
+              </>
+            ) : (
+              <p>{t('waitlist.localNoticeMessage')}</p>
+            )}
+          </div>
+          <p className={styles.privacyNote}>{t('waitlist.privacyNote')}</p>
         </div>
       </section>
     );
@@ -135,27 +143,29 @@ function WaitlistForm() {
     <section id="waitlist" className={styles.section} aria-labelledby="waitlist-title">
       <div className="container">
         <h2 id="waitlist-title" className={styles.title}>
-          {waitlist.title}
+          {t('waitlist.title')}
         </h2>
-        <p className={styles.description}>{waitlist.description}</p>
+        <p className={styles.description}>{t('waitlist.description')}</p>
 
         <form className={styles.form} onSubmit={handleSubmit} noValidate>
           {(status === 'error' || status === 'validation-error') && (
             <p className={styles.formError} role="alert">
-              {status === 'validation-error' ? waitlist.validationErrorMessage : waitlist.errorMessage}
+              {status === 'validation-error'
+                ? t('waitlist.validationErrorMessage')
+                : t('waitlist.errorMessage')}
             </p>
           )}
 
           <div className={styles.field}>
             <label htmlFor={nameId} className={styles.label}>
-              {waitlist.fields.name.label}
+              {t('waitlist.fields.name.label')}
             </label>
             <input
               id={nameId}
               name="name"
               type="text"
               className={styles.input}
-              placeholder={waitlist.fields.name.placeholder}
+              placeholder={t('waitlist.fields.name.placeholder')}
               value={values.name}
               onChange={handleChange('name')}
               aria-invalid={Boolean(errors.name)}
@@ -172,14 +182,14 @@ function WaitlistForm() {
 
           <div className={styles.field}>
             <label htmlFor={emailId} className={styles.label}>
-              {waitlist.fields.email.label}
+              {t('waitlist.fields.email.label')}
             </label>
             <input
               id={emailId}
               name="email"
               type="email"
               className={styles.input}
-              placeholder={waitlist.fields.email.placeholder}
+              placeholder={t('waitlist.fields.email.placeholder')}
               value={values.email}
               onChange={handleChange('email')}
               aria-invalid={Boolean(errors.email)}
@@ -205,19 +215,19 @@ function WaitlistForm() {
               disabled={isSubmitting}
             />
             <label htmlFor={betaId} className={styles.checkboxLabel}>
-              {waitlist.fields.betaInterest.label}
+              {t('waitlist.fields.betaInterest.label')}
             </label>
           </div>
 
           <Button type="submit" variant="primary" className={styles.submit} disabled={isSubmitting}>
-            {isSubmitting ? waitlist.submittingLabel : waitlist.submitLabel}
+            {isSubmitting ? t('waitlist.submittingLabel') : t('waitlist.submitLabel')}
           </Button>
 
           <p id={statusId} className="visually-hidden" aria-live="polite">
-            {isSubmitting ? waitlist.submittingLabel : ''}
+            {isSubmitting ? t('waitlist.submittingLabel') : ''}
           </p>
 
-          <p className={styles.privacyNote}>{waitlist.privacyNote}</p>
+          <p className={styles.privacyNote}>{t('waitlist.privacyNote')}</p>
         </form>
       </div>
     </section>

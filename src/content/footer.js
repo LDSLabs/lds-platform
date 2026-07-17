@@ -1,16 +1,24 @@
-// Footer links are derived from the central site configuration. Any link
-// whose underlying config value is `null` is intentionally rendered as
-// unavailable (never a clickable `href="#"` placeholder) by the Footer
-// component — see src/components/Footer/Footer.jsx.
+// Footer links are derived from the central site configuration. Link
+// labels are translatable copy (src/locales/*.json, `footer` namespace) —
+// this file only provides the translation `key` and the `href`.
+//
+// Anchor links (Products, Roadmap) always point within the single page and
+// are always available. Links backed by external configuration
+// (GitHub, Contact, Privacy, Terms) are intentionally rendered as
+// unavailable (never a clickable `href="#"` placeholder) when the
+// underlying config value is `null` — see src/components/Footer/Footer.jsx.
 import { siteConfig } from '../config/siteConfig.js';
 
 export function getFooterLinks() {
   return [
-    { label: 'GitHub', href: siteConfig.githubUrl },
+    { key: 'products', href: '#product' },
+    { key: 'roadmap', href: '#roadmap' },
+    { key: 'github', href: siteConfig.githubUrl },
     {
-      label: 'Contact',
+      key: 'contact',
       href: siteConfig.contactEmail ? `mailto:${siteConfig.contactEmail}` : null,
     },
-    { label: 'Privacy', href: siteConfig.privacyUrl },
+    { key: 'privacy', href: siteConfig.privacyUrl },
+    { key: 'terms', href: siteConfig.termsUrl },
   ];
 }

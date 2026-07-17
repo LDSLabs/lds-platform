@@ -16,19 +16,29 @@
   max-width: 680px;
 }
 
-.chipList {
+.itemList {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: var(--space-3);
   margin-top: var(--space-6);
+  max-width: 640px;
 }
 
-.chip {
-  padding: var(--space-2) var(--space-4);
-  border: 1px dashed var(--color-border-strong);
-  border-radius: 999px;
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.itemLabel {
   font-size: var(--font-size-sm);
-  color: var(--color-text-dim);
+  font-weight: 600;
+  color: var(--color-text);
 }
 
 .note {
@@ -36,4 +46,12 @@
   font-size: var(--font-size-xs);
   color: var(--color-text-dim);
   font-style: italic;
+}
+
+@media (max-width: 480px) {
+  .item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
 }

@@ -1,22 +1,27 @@
+import { useTranslation } from 'react-i18next';
 import Tag from '../Tag/Tag.jsx';
-import { product } from '../../content/product.js';
 import styles from './Product.module.css';
 
 function Product() {
+  const { t } = useTranslation();
+  const included = t('product.included', { returnObjects: true });
+  const planned = t('product.planned', { returnObjects: true });
+  const plannedStatusLabel = t('product.status.planned');
+
   return (
     <section id="product" className={styles.section} aria-labelledby="product-title">
       <div className="container">
-        <Tag tone="accent">{product.eyebrow}</Tag>
+        <Tag tone="accent">{t('product.eyebrow')}</Tag>
         <h2 id="product-title" className={styles.title}>
-          {product.name}
+          {t('product.name')}
         </h2>
-        <p className={styles.description}>{product.description}</p>
+        <p className={styles.description}>{t('product.description')}</p>
 
         <div className={styles.grid}>
           <div>
-            <h3 className={styles.groupTitle}>{product.includedTitle}</h3>
+            <h3 className={styles.groupTitle}>{t('product.includedTitle')}</h3>
             <ul className={styles.list}>
-              {product.included.map((item) => (
+              {included.map((item) => (
                 <li key={item.name} className={styles.listItem}>
                   <span className={styles.itemName}>{item.name}</span>
                   <span className={styles.itemDetail}>{item.detail}</span>
@@ -26,12 +31,12 @@ function Product() {
           </div>
 
           <div>
-            <h3 className={styles.groupTitle}>{product.plannedTitle}</h3>
+            <h3 className={styles.groupTitle}>{t('product.plannedTitle')}</h3>
             <ul className={styles.list}>
-              {product.planned.map((item) => (
+              {planned.map((item) => (
                 <li key={item.name} className={`${styles.listItem} ${styles.plannedItem}`}>
                   <span className={styles.itemName}>{item.name}</span>
-                  <Tag tone="planned">Planned</Tag>
+                  <Tag tone="planned">{plannedStatusLabel}</Tag>
                 </li>
               ))}
             </ul>

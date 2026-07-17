@@ -53,6 +53,22 @@
   margin-top: var(--space-2);
 }
 
+.credibilityList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-6);
+  margin-top: var(--space-6);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--color-border);
+  width: 100%;
+}
+
+.credibilityItem {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-dim);
+  letter-spacing: 0.01em;
+}
+
 @media (max-width: 640px) {
   .hero {
     padding-block: var(--space-7) var(--space-7);
@@ -72,5 +88,9 @@
 
   .actions > * {
     width: 100%;
+  }
+
+  .credibilityList {
+    gap: var(--space-2) var(--space-4);
   }
 }

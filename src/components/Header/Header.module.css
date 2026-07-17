@@ -35,6 +35,12 @@
   gap: var(--space-5);
 }
 
+.navActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+}
+
 .navLink {
   font-size: var(--font-size-sm);
   color: var(--color-text-muted);
@@ -127,6 +133,12 @@
     align-items: flex-start;
     gap: var(--space-4);
     margin-bottom: var(--space-5);
+  }
+
+  .navActions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-4);
   }
 
   .cta {

@@ -1,9 +1,12 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import Button from '../Button/Button.jsx';
+import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher.jsx';
 import { site, navLinks, headerCta } from '../../content/site.js';
 import styles from './Header.module.css';
 
 function Header() {
+  const { t } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const closeMenu = () => setMenuOpen(false);
@@ -23,7 +26,7 @@ function Header() {
           onClick={() => setMenuOpen((open) => !open)}
         >
           <span className="visually-hidden">
-            {menuOpen ? 'Close menu' : 'Open menu'}
+            {menuOpen ? t('common.menuClose') : t('common.menuOpen')}
           </span>
           <span aria-hidden="true" className={styles.menuIcon} data-open={menuOpen} />
         </button>
@@ -31,20 +34,23 @@ function Header() {
         <nav
           id="primary-navigation"
           className={`${styles.nav} ${menuOpen ? styles.navOpen : ''}`}
-          aria-label="Primary"
+          aria-label={t('nav.primaryLabel')}
         >
           <ul className={styles.navList}>
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a href={link.href} className={styles.navLink} onClick={closeMenu}>
-                  {link.label}
+                  {t(`nav.${link.key}`)}
                 </a>
               </li>
             ))}
           </ul>
-          <Button href={headerCta.href} variant="primary" className={styles.cta} onClick={closeMenu}>
-            {headerCta.label}
-          </Button>
+          <div className={styles.navActions}>
+            <LanguageSwitcher />
+            <Button href={headerCta.href} variant="primary" className={styles.cta} onClick={closeMenu}>
+              {t('nav.cta')}
+            </Button>
+          </div>
         </nav>
       </div>
     </header>

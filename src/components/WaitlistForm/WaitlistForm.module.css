@@ -109,8 +109,17 @@
   border: 1px solid var(--color-accent-border);
   border-radius: var(--radius-md);
   color: var(--color-text);
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-base);
   max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.successTitle {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--color-text);
 }
 
 @media (max-width: 480px) {

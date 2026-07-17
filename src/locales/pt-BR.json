@@ -1,0 +1,141 @@
+{
+  "meta": {
+    "title": "LDS Labs — Produtos para Desenvolvedores Feitos para Acelerar a Entrega",
+    "description": "A LDS Labs cria produtos e starters para desenvolvedores focados em bases prontas para produção. O primeiro produto, o Spring Boot SaaS Starter, ajuda times a entregar software mais rápido. Entre na lista de espera.",
+    "keywords": "produtos para desenvolvedores, starter spring boot, boilerplate saas, spring boot pronto para produção, ferramentas para desenvolvedores",
+    "ogTitle": "LDS Labs — Pare de reconstruir a base. Comece a entregar.",
+    "ogDescription": "Produtos e starters para desenvolvedores construídos em torno de bases prontas para produção. Primeiro lançamento: Spring Boot SaaS Starter, atualmente em desenvolvimento.",
+    "twitterTitle": "LDS Labs — Pare de reconstruir a base. Comece a entregar.",
+    "twitterDescription": "Produtos e starters para desenvolvedores construídos em torno de bases prontas para produção. Primeiro lançamento: Spring Boot SaaS Starter, atualmente em desenvolvimento."
+  },
+  "common": {
+    "skipToContent": "Pular para o conteúdo",
+    "menuOpen": "Abrir menu",
+    "menuClose": "Fechar menu",
+    "comingSoon": "(em breve)"
+  },
+  "nav": {
+    "primaryLabel": "Principal",
+    "product": "Produto",
+    "benefits": "Benefícios",
+    "waitlist": "Lista de espera",
+    "cta": "Entrar na lista de espera"
+  },
+  "hero": {
+    "eyebrow": "Construído em público · Acesso antecipado",
+    "title": "Pare de reconstruir a base. Comece a entregar seu SaaS em Spring Boot.",
+    "subtitle": "Uma base pronta para produção em Spring Boot para quem constrói produtos SaaS — pule o boilerplate e comece pela regra de negócio que realmente importa. Ainda em desenvolvimento: entre na lista de espera para acesso antecipado e ajude a definir o que sai primeiro.",
+    "productLabel": "Primeiro produto",
+    "primaryCta": "Garantir acesso antecipado",
+    "secondaryCta": "Ver o que já existe",
+    "credibilityLabel": "Por que confiar neste projeto",
+    "credibility": {
+      "builtInPublic": "Construído em público",
+      "productionFocused": "Engenharia focada em produção",
+      "realWorldExperience": "Baseado em experiência real de arquitetura",
+      "communityDriven": "Roadmap moldado pela comunidade"
+    }
+  },
+  "product": {
+    "eyebrow": "Produto principal · Em desenvolvimento ativo",
+    "name": "Spring Boot SaaS Starter",
+    "description": "Um ponto de partida pronto para produção para produtos SaaS em Spring Boot. Ele já resolve as decisões de infraestrutura que todo time repete, para você sair do clone até a primeira regra de negócio em horas, não semanas.",
+    "includedTitle": "O que já está pronto",
+    "plannedTitle": "O que está planejado",
+    "status": {
+      "completed": "Concluído",
+      "inProgress": "Em andamento",
+      "planned": "Planejado"
+    },
+    "included": [
+      { "name": "Java 21", "detail": "Base moderna de linguagem com suporte de longo prazo" },
+      { "name": "Spring Boot 4", "detail": "Construído sobre a versão major atual desde o início" },
+      { "name": "PostgreSQL", "detail": "Banco de dados relacional de nível produção" },
+      { "name": "Flyway", "detail": "Toda alteração de schema é versionada e repetível" },
+      { "name": "Docker", "detail": "O mesmo ambiente do seu notebook até a produção" },
+      { "name": "OpenAPI", "detail": "Documentação de API gerada a partir do código, sempre atualizada" },
+      { "name": "GitHub Actions", "detail": "Testes e builds rodam a cada push, sem configuração extra" },
+      { "name": "Arquitetura orientada a funcionalidades", "detail": "Código organizado por capacidade de negócio, não por camada técnica" }
+    ],
+    "planned": [
+      { "name": "Autenticação", "detail": "Cadastro, login e gerenciamento de sessão" },
+      { "name": "RBAC", "detail": "Permissões baseadas em papéis para times e contas" },
+      { "name": "Multi-tenancy", "detail": "Isolamento de dados por cliente, nativo" }
+    ]
+  },
+  "benefits": {
+    "title": "Por que começar por aqui",
+    "subtitle": "As partes menos glamorosas de todo projeto SaaS, já resolvidas — sem esconder nada.",
+    "items": [
+      {
+        "title": "Semanas de setup, resolvidas",
+        "description": "Clone um starter que já tomou as decisões difíceis de infraestrutura e abra seu primeiro arquivo de feature no mesmo dia."
+      },
+      {
+        "title": "Regra de negócio em primeiro lugar",
+        "description": "Passe o primeiro dia escrevendo as regras que tornam seu produto diferente, não conectando um banco de dados."
+      },
+      {
+        "title": "Toda decisão explicada",
+        "description": "Cada escolha arquitetural vem com a justificativa por trás, para seu time entender o porquê, não só o como."
+      },
+      {
+        "title": "Código que é seu, não alugado",
+        "description": "Um ponto de partida que você possui de verdade: leia, altere e evolua sem depender de terceiros."
+      }
+    ]
+  },
+  "roadmap": {
+    "title": "Para onde a LDS Labs está indo",
+    "description": "O Spring Boot SaaS Starter é o primeiro produto sob o nome LDS Labs. O mesmo foco em bases prontas para produção deve se estender para novos starters, módulos reutilizáveis, ferramentas para desenvolvedores, templates e produtos de IA em diferentes stacks.",
+    "note": "Construído em público — este roadmap é atualizado conforme o trabalho avança.",
+    "statusLabels": {
+      "inProgress": "Em andamento",
+      "planned": "Planejado"
+    },
+    "items": [
+      { "label": "Spring Boot SaaS Starter", "status": "inProgress" },
+      { "label": "Novos starters para outras linguagens e frameworks", "status": "planned" },
+      { "label": "Módulos reutilizáveis — autenticação, cobrança, multi-tenancy", "status": "planned" },
+      { "label": "Ferramentas e CLIs para desenvolvedores", "status": "planned" },
+      { "label": "Templates de projeto", "status": "planned" },
+      { "label": "Ferramentas de IA para desenvolvedores", "status": "planned" }
+    ]
+  },
+  "waitlist": {
+    "title": "Garanta acesso antecipado",
+    "description": "Deixe seu nome e e-mail para garantir acesso antecipado ao Spring Boot SaaS Starter, além de atualizações ocasionais conforme ele é construído em público.",
+    "fields": {
+      "name": { "label": "Nome", "placeholder": "Seu nome" },
+      "email": { "label": "E-mail", "placeholder": "voce@empresa.com" },
+      "betaInterest": { "label": "Quero participar do programa beta" }
+    },
+    "submitLabel": "Solicitar acesso antecipado",
+    "submittingLabel": "Enviando…",
+    "successTitle": "Você está na lista!",
+    "successMessage": "Vamos te manter atualizado conforme o desenvolvimento avança.",
+    "localNoticeMessage": "O acesso antecipado ainda não está disponível. Este formulário ainda não está conectado a um serviço real, então nada foi enviado — volte em breve.",
+    "validationErrorMessage": "Não conseguimos enviar sua solicitação. Verifique seu nome e e-mail e tente novamente.",
+    "errorMessage": "Algo deu errado ao enviar sua solicitação. Tente novamente em instantes.",
+    "privacyNote": "Sem spam. Apenas atualizações do produto e convites de acesso antecipado.",
+    "errors": {
+      "name": "Informe seu nome.",
+      "email": "Informe um e-mail válido."
+    }
+  },
+  "footer": {
+    "tagline": "Produtos para desenvolvedores feitos para acelerar a entrega.",
+    "products": "Produtos",
+    "roadmap": "Roadmap",
+    "github": "GitHub",
+    "contact": "Contato",
+    "privacy": "Privacidade",
+    "terms": "Termos",
+    "copyright": "© {{year}} {{brand}}. Todos os direitos reservados."
+  },
+  "languageSwitcher": {
+    "label": "Idioma",
+    "en": "English",
+    "ptBR": "Português (Brasil)"
+  }
+}

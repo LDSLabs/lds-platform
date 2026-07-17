@@ -1,0 +1,141 @@
+{
+  "meta": {
+    "title": "LDS Labs — Developer Products Built to Help You Ship Faster",
+    "description": "LDS Labs builds developer products and starters focused on production-ready foundations. The first product, Spring Boot SaaS Starter, helps teams move to faster software delivery. Join the early access list.",
+    "keywords": "developer products, spring boot starter, saas boilerplate, java saas starter, production-ready spring boot, developer tools",
+    "ogTitle": "LDS Labs — Stop rebuilding the foundation. Start shipping.",
+    "ogDescription": "Developer products and starters built around production-ready foundations. First release: Spring Boot SaaS Starter, currently in development.",
+    "twitterTitle": "LDS Labs — Stop rebuilding the foundation. Start shipping.",
+    "twitterDescription": "Developer products and starters built around production-ready foundations. First release: Spring Boot SaaS Starter, currently in development."
+  },
+  "common": {
+    "skipToContent": "Skip to content",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu",
+    "comingSoon": "(coming soon)"
+  },
+  "nav": {
+    "primaryLabel": "Primary",
+    "product": "Product",
+    "benefits": "Benefits",
+    "waitlist": "Waitlist",
+    "cta": "Join the waitlist"
+  },
+  "hero": {
+    "eyebrow": "Built in public · Early access",
+    "title": "Stop rebuilding the foundation. Start shipping your Spring Boot SaaS.",
+    "subtitle": "A production-ready Spring Boot foundation for developers building SaaS products — skip the boilerplate and start on the business logic that actually matters. Still in development: join the waitlist for early access and a say in what ships first.",
+    "productLabel": "First product",
+    "primaryCta": "Get early access",
+    "secondaryCta": "See what's inside",
+    "credibilityLabel": "Why trust this project",
+    "credibility": {
+      "builtInPublic": "Built in public",
+      "productionFocused": "Production-focused engineering",
+      "realWorldExperience": "Grounded in real-world architecture",
+      "communityDriven": "Community-shaped roadmap"
+    }
+  },
+  "product": {
+    "eyebrow": "Flagship product · In active development",
+    "name": "Spring Boot SaaS Starter",
+    "description": "A production-ready starting point for Spring Boot SaaS products. It already makes the infrastructure decisions every team repeats, so you can go from clone to your first business rule in hours, not weeks.",
+    "includedTitle": "What's already built",
+    "plannedTitle": "What's planned next",
+    "status": {
+      "completed": "Completed",
+      "inProgress": "In progress",
+      "planned": "Planned"
+    },
+    "included": [
+      { "name": "Java 21", "detail": "Modern LTS language baseline" },
+      { "name": "Spring Boot 4", "detail": "Built on the current major version from day one" },
+      { "name": "PostgreSQL", "detail": "Production-grade relational data store" },
+      { "name": "Flyway", "detail": "Every schema change versioned and repeatable" },
+      { "name": "Docker", "detail": "The same environment from your laptop to production" },
+      { "name": "OpenAPI", "detail": "API docs generated from the code, always in sync" },
+      { "name": "GitHub Actions", "detail": "Tests and builds run on every push, no setup required" },
+      { "name": "Feature-based architecture", "detail": "Code organized by business capability, not technical layer" }
+    ],
+    "planned": [
+      { "name": "Authentication", "detail": "Sign-up, login and session handling" },
+      { "name": "RBAC", "detail": "Role-based permissions for teams and accounts" },
+      { "name": "Multi-tenancy", "detail": "Isolated data per customer, built in" }
+    ]
+  },
+  "benefits": {
+    "title": "Why teams will start here",
+    "subtitle": "The unglamorous parts of every SaaS project, already handled — with nothing hidden.",
+    "items": [
+      {
+        "title": "Weeks of setup, gone",
+        "description": "Clone a starter that already made the hard infrastructure calls, and open your first feature file the same day."
+      },
+      {
+        "title": "Business logic first",
+        "description": "Spend day one writing the rules that make your product different, not wiring up a database connection."
+      },
+      {
+        "title": "Every decision explained",
+        "description": "Each architectural choice ships with the reasoning behind it, so your team understands the why, not just the how."
+      },
+      {
+        "title": "Code you keep, not rent",
+        "description": "A starting point you own outright: read it, change it, and grow past it with no vendor lock-in."
+      }
+    ]
+  },
+  "roadmap": {
+    "title": "Where LDS Labs is headed",
+    "description": "Spring Boot SaaS Starter is the first product built under the LDS Labs name. The same focus on production-ready foundations is planned to extend into more starters, reusable modules, developer tools, templates, and AI-assisted products across different stacks.",
+    "note": "Built in public — this roadmap updates as work progresses.",
+    "statusLabels": {
+      "inProgress": "In progress",
+      "planned": "Planned"
+    },
+    "items": [
+      { "label": "Spring Boot SaaS Starter", "status": "inProgress" },
+      { "label": "Additional language & framework starters", "status": "planned" },
+      { "label": "Reusable modules — auth, billing, tenancy", "status": "planned" },
+      { "label": "Developer tooling & CLIs", "status": "planned" },
+      { "label": "Project templates", "status": "planned" },
+      { "label": "AI-assisted developer tools", "status": "planned" }
+    ]
+  },
+  "waitlist": {
+    "title": "Get early access",
+    "description": "Leave your name and email to get early access to the Spring Boot SaaS Starter, plus occasional updates as it's built in public.",
+    "fields": {
+      "name": { "label": "Name", "placeholder": "Your name" },
+      "email": { "label": "Email", "placeholder": "you@company.com" },
+      "betaInterest": { "label": "I'd like to take part in the beta program" }
+    },
+    "submitLabel": "Request early access",
+    "submittingLabel": "Sending…",
+    "successTitle": "You're on the list!",
+    "successMessage": "We'll keep you updated as development progresses.",
+    "localNoticeMessage": "Early access isn't open yet. This form isn't connected to a live service, so nothing was submitted — please check back soon.",
+    "validationErrorMessage": "We couldn't submit your request. Please check your name and email and try again.",
+    "errorMessage": "Something went wrong sending your request. Please try again in a moment.",
+    "privacyNote": "No spam. Only product updates and early access invitations.",
+    "errors": {
+      "name": "Please enter your name.",
+      "email": "Please enter a valid email address."
+    }
+  },
+  "footer": {
+    "tagline": "Developer products built to help you ship faster.",
+    "products": "Products",
+    "roadmap": "Roadmap",
+    "github": "GitHub",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "copyright": "© {{year}} {{brand}}. All rights reserved."
+  },
+  "languageSwitcher": {
+    "label": "Language",
+    "en": "English",
+    "ptBR": "Português (Brasil)"
+  }
+}
